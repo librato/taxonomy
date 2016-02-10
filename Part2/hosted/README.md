@@ -1,14 +1,11 @@
-#Paymodel
+# License/Payment Model
 ## How do you want to pay for your tool:
 
-## [Commercial](commercial) 
-Commercially licensed software often costs money to obtain (legally) and is
-usually distributed in binary form. This category includes demo software that's
-free-to-use for a limited time, as well as tools whose free-to-use tier are too
-limited to run a small start-up on. 
+## [Subscription](subscription) 
+Most hosted and SaaS monitoring tools are subscription based after a ~30 day
+free trial period. 
 
 ## [Freemium](freemium) 
-Freemium software is free to use but comes with a paid premium component or
-usage tier.  SaaS tools that have a *usable* free tier can be found here. By
-*usable* we mean the free tier provides the base-line operability a resonable
-person would consider running a small startup on.
+SaaS tools that have a *usable* free tier can be found here. By *usable* we
+mean the free tier provides the base-line operability a resonable person would
+consider running a small startup on.

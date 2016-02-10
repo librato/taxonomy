@@ -1,17 +1,10 @@
-# Activity model
-## What do you want your tool to do?
+# License/Payment Model
+## How do you want to pay for your tool:
 
-### [Collectors](collectors)
-Tools designed primarily to measure things and make observations. This includes
-things like monitoring agents, instrumentation libraries and sensors.
+## [Subscription](subscription) 
+Appliances in this category typically provide the hardware for free, but charge
+a monthly or annual subscription fee for use.
 
-### [Processors](processors)
-Tools designed primarily to accept and/or process data from other tools. This
-includes data visualization tools and time series DB's as well as stream
-processing systems and glue-projects. 
-
-### [Monoliths](monoliths)
-Tools designed to be all-in-one solutions. It's probably possible to
-import/export data from these tools, but they were designed to consume the data
-that they, themselves collect. Most traditional operations-oriented
-"monitoring" tools (eg openview, patrol, Nagios et. al) fit in this category. 
+## [Hardware](hardware) 
+Appliances in this category charge you for the hardware, and possibly for
+ongoing support/feature updates. 
