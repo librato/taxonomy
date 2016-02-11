@@ -1,3 +1,3 @@
 # Tools in ./traditional/commercial/monoliths/platform_specific
-## [# <Name>](# <Name>)
-## <Single-Line Description>
+## [hyperic](hyperic.md)
+This tool is not yet documented

@@ -1,5 +1,5 @@
 # Tools in ./hosted/subscription/monoliths/platform_specific
-## [# <Name>](# <Name>)
-## <Single-Line Description>
-## [# <Name>](# <Name>)
-## <Single-Line Description>
+## [mongodb_cloud_manager](mongodb_cloud_manager.md)
+This tool is not yet documented
+## [rackspace](rackspace.md)
+This tool is not yet documented

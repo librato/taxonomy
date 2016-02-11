@@ -1,9 +1,9 @@
 # Tools in ./hosted/subscription/monoliths/system
-## [# <Name>](# <Name>)
-## <Single-Line Description>
-## [# <Name>](# <Name>)
-## <Single-Line Description>
-## [# <Name>](# <Name>)
-## <Single-Line Description>
-## [# <Name>](# <Name>)
-## <Single-Line Description>
+## [copperegg](copperegg.md)
+This tool is not yet documented
+## [logic_monitor](logic_monitor.md)
+This tool is not yet documented
+## [nodeping](nodeping.md)
+This tool is not yet documented
+## [pingdom](pingdom.md)
+This tool is not yet documented
