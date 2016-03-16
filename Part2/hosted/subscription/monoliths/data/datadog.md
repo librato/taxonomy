@@ -5,19 +5,19 @@
 ### What is it? 
 Datadog makes it very quick and easy to get started monitoring hosts running a
 dizzying array of often-used applications like databases, web servers, and even
-other monitoring systems. In my opinion the depth of out-of-the-box integration
-support is really what makes Datadog so popular. It really couldn't be easier
+other monitoring systems. Their depth of out-of-the-box integration support
+makes Datadog a very popular tool with Ops teams. It really couldn't be easier
 to bootstrap a monitoring infrastructure from scratch. 
 
-The agent collects metric data which is sent to Datadog's publicly accessable
-API. Data can be either numeric or "event" data (somewhat of a cross between
-log data and annotations). Customers then log into data-dog's Web-UI to
+The agent collects metric data, which is sent to Datadog's publicly accessable
+API. Data can be either numeric or "event" data (somewhat of a cross between a
+log-line and an annotation). Customers then log into data-dog's Web-UI to
 interact with the data, configure dashboards and craft alerts. Datadog also
 supports arbitrary "tags" enabling users to tag the same metric several
-different ways for ease of lookup later.
+different ways for ease of lookup  and filtering later.
 
 The agent also comes with a built-in statsd listener to which you can emit
-custom metrics. As of this writing custom metrics are limited to 100 metrics
+custom metrics. As of this writing, custom metrics are limited to 100 metrics
 per instance. 
 
 ### push, pull, both, or neither?
@@ -40,14 +40,14 @@ at: http://blog.underdog.io/post/107602021862/inside-datadogs-tech-stack
 ### Analysis capabilities
 Datadog's UI is snappy and elegant. Arbitrary data tags make it quick and easy
 to locate and compare metrics against each other, and there are myriad
-visualization types to choose from. 
+visualization types to choose from.
 
 ### Notification Capabilities
 Datadog has excellent notification capabilities. Alert critera can be defined
 for any metric you send including the textual contents inside event data.
 Criteria includes host-grouping by tag, alerting on absent data, user-defined
 static thresholds and some simple outlier detection (where one metric source is
-reporting differently from the others in the same group)
+reporting differently from the others in the same group). 
 
 ### Integration capabilities
 Datadog has excellent integration capabilities, enabling new users to get up
