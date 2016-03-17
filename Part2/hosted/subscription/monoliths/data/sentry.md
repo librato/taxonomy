@@ -38,9 +38,10 @@ attributes like:
  * The size in bytes of the 'X' field within each event
 
 ### Data Storage 
-Internally Sentry server uses two data stores, one for time-series data and one
-key-value style store for events. Both of these data stores is configurable to
-use the back-end or in-memory db of your choosing. Details are available here:
+Internally Sentry server uses a few differetn data stores, one for time-series
+data, a key-value style store, and a Postgres instance. The two former data
+stores are configurable to use the back-end or in-memory db of your choosing.
+Details are available here:
 https://docs.getsentry.com/on-premise/server/nodestore/
 
 ### Analysis capabilities
@@ -50,7 +51,20 @@ arbitrary tags along with the exceptions from your code to help filter
 and group exceptions in the UI.
 
 ### Notification Capabilities
+Sentry has very good notification capabilities, allowing you to set very
+granular conditions for things like the first exception of it's kind to occur
+as well as specific fields that match a given blob of text. The system also
+tracks state on a per-exception basis (unresolved, resolved, and muted) and can
+provide follow-up notifications when exceptions are resolved. 
 
 ### Integration capabilities
+Sentry maintains clients for 11 different languages including Java, Ruby, Go,
+Swift, Node and Python.
 
 ### Scaling Model
+Sentry server is a python app designed to run behind a webserver like NGINX and
+relies on a Postgres instance for data storage. Most of the componants are
+theroetically horizontally scalable but there's still a single point of failure
+in the Database tier. HA configurations are still possible but difficult enough
+that the hosted solution is probably your best bet if you need big scale and/or
+HA.
