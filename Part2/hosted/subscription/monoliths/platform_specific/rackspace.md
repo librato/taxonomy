@@ -74,8 +74,8 @@ customer and you have not signed up for this, you should close this book and go
 do so before they change their minds. 
 
 The Rackspace API is good, and integrations from meta-server management
-companies like Server Density, as well as the usual suspects in the
-notification space (Pagerduty, VictorOps etc..) rely on it heavily.
+companies like Server Density and CopperEgg, as well as the usual suspects in
+the notification space (Pagerduty, VictorOps etc..) rely on it heavily.
 
 ### Scaling Model
 Rackspace Monitoring scales linerally with their cloud, so effectively from the
