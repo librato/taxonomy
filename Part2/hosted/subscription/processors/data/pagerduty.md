@@ -15,6 +15,8 @@ N/A
 Unavailable
 
 ### Analysis capabilities
+In the Pagerduty UI, you can visualize and analyze performance and efficiency from the system level down to the user level.  View reports to measure operational efficiency, user productivity, and trends and patterns of recurring incidents.
+
 Using the API you can get high level statistics about the number of alerts (SMSes, phone calls and emails) sent for the desired time period, summed daily, weekly or monthly and get high level statistics about the number of incidents created for the desired time period, summed daily, weekly or monthly.
 
 ### Notification Capabilities
