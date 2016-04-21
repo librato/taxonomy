@@ -65,8 +65,8 @@ squashing, Acknowledgements and escalations etc.. You can alert on anything the
 system can present, and create alerts using combined criteria. 
 
 Email is supported out of the box but other integrations are more difficult
-than normal given the rigidity of NPM's back-end data store. Check out the
-pagerduty integration guide for NPM to get an idea:
+than normal to pull off given the rigidity of NPM's back-end data store. Check
+out the pagerduty integration guide for NPM to get an idea:
 https://www.pagerduty.com/docs/guides/solarwinds-integration-guide/
 
 ### Integration capabilities
