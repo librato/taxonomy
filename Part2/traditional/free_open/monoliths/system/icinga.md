@@ -1,41 +1,42 @@
-# Nagios
+# Icinga
 
-## The venerable, ubiquitous, operations-centric, systems-monitoring monolith
+## Nagios extended
 
 ### What is it? 
-Nagios is one of the oldest open-source monitoring tools.  It is a
-[centralized-polling](/Part1/2.md) system that executes stand-alone monitoring
-scripts on a rotating schedule. It’s somewhat unwieldy text-based configuration
-makes it highly flexible, albiet difficult to configure, and thousands of
-third-party add-ons exist to extend its functionality and simplify its
-configuration.  Nagios is generally believed to be the most widely used open
-source monitoring tool in the world today.
+Icinga is a [centralized-polling](/Part1/2.md) system which was forked from
+Nagios core in 2007. Like Nagios, it executes stand-alone monitoring scripts on
+a rotating schedule and it remains plug-in compatible with Nagios. 
+
+Currently there are two major version branches, Icinga v1 and v2, the primary
+difference being that Icinga1 still uses Nagios configuration syntax while
+Icinga2 uses a new, more programmatic configuration syntax that is capapble of
+tracking variables against base-objects and then assigning
+services/notifications/etc.. based on those variables rather than statically
+assigning them like Nagios does.  
 
 ### push, pull, both, or neither? 
-In it’s default mode, Nagios is a pull-based system, but it can be configured
-to accept “passive check results” as well, which implement push-based status
-updates via HTTPS.
+In it’s default mode, Icinga, like Nagios is a pull-based system, but it can be
+configured to accept “passive check results” as well, which implement
+push-based status updates (usually via HTTPS).
 
 ### Measurement resolution
-Nagios is designed to operate on the order of Minutes. By default it launches
-active service checks every 5 minutes.
+Icinga inherets it's resolution form Nagios, which was designed to operate on
+the order of Minutes. By default it launches active service checks every 5
+minutes.
 
 ### Data Storage 
-Nagios stores state change events only, logging whenever a service changes from
-one state (like 'OK') to another state (like 'warning'). These are written to a
-log file located on the local filesystem. There is naescent built-in support
-for collecting performance data, and there are third-party addons which emit
-this performance data to external processors like
-[Graphite](/Part2/traditional/free_open/processors/data/graphite.md/ and
-[Librato](/Part2/hosted/freemium/processors/data/librato.md).  Other
-third-party add-ons exist to replace the state log file with mysql and postgres
-databases.
+One primary reason for the fork was Nagios' steadfast resistance to replacing
+the state file with a relational database, and predictably, Icinga made this
+change pretty much immediatly after the fork, providing "IDO" modules which can
+store Icinga state data in either a MySQL or Postgres DB. The system does not
+have a native means of storing and presenting performance data, but the various
+Nagios Perfdata add-ons all remain compatible with Icinga.
 
 ### Analysis capabilities 
-The default Nagios UI supports basic real-time red/yellow/green style
+The default Icinga UI supports basic real-time red/yellow/green style
 availability data with limited historical analysis capabilities. Third-party
-and commercial UI’s exist that enable some performance data in the form of
-line-graphs. 
+and commercial UI add-on's exist that enable some performance data in the form
+of line-graphs. 
 
 ### Notification Capabilities 
 By default Nagios supports email notifications, UI-based alert
@@ -45,24 +46,18 @@ add-ons exist to extend it to support services like [PagerDuty]() and
 [VictorOps]().
 
 ### Integration capabilities 
-In some contexts, Nagios was designed with excellent “hooks” to support
-end-user extensions and add ons. It is easy, for example, to create new service
-checks, and re-define notification commands.  In other context Nagios is quite
-difficult to extend, for example it is not easy to export performance data from
-Nagios into telemetry analysis systems like
-[Graphite](/Part2/traditional/free_open/processors/data/graphite.md). Tools exist to
-accomplish this, but the configuration will take a first-time user several
-hours at a minimum.  In still other contexts, Nagios was not designed for
-integration at all, for example there is no API or other means to query the
-Nagios Daemon for realtime status updates on arbitrary hosts. Integrations that
-provide this functionality exist but are non-trivial to install. DIY solutions
-must be written in C in order to communicate with the nagios internal event
-broker interface.
+Icinga is generally identical to Nagios with respect to the set of hooks
+typically employed by syadmin to extend Nagios to do things like implement new
+notification types. It is missing some post-Nagios-Core v4 hooks like the
+"Nagios event radio dispatch" interface, but the event broker interface remains
+intact.
+
+It also includes several powerful hooks, made possible by the use of a DB
+state-store that Nagios lacks. These include the Query functionality of the DB
+itself, as well a fully-functional Web API. 
 
 ### Scaling Model 
-Nagios scales well into the tens of thousands of active service checks on
-modern hardware depending on the configured polling interval. With passive
-checks, it scales into the range of half a million service checks depending on
-the configured polling interval. Beyond that, multi-daemon setups can be
-designed and maintained by knowledgeable, dedicated telemetry teams using
-third-party addons
+Icinga scales on par with Nagios into the rage the tens of thousands of active
+service checks on modern hardware depending on the configured polling interval
+(functionally it's not much different in this regard). It does, however add
+native clustering support to achieve HA setups.
