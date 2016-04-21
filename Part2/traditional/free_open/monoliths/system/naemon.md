@@ -1,15 +1,11 @@
-# Nagios
+# Naemon
 
-## The venerable, ubiquitous, operations-centric, systems-monitoring monolith
+## The new Nagios
 
 ### What is it? 
-Nagios is one of the oldest open-source monitoring tools.  It is a
-[centralized-polling](/Part1/2.md) system that executes stand-alone monitoring
-scripts on a rotating schedule. It’s somewhat unwieldy text-based configuration
-makes it highly flexible, albiet difficult to configure, and thousands of
-third-party add-ons exist to extend its functionality and simplify its
-configuration.  Nagios is generally believed to be the most widely used open
-source monitoring tool in the world today.
+Naemon is a [centralized-polling](/Part1/2.md) system that was forked from
+Nagios in 2013. It executes stand-alone monitoring scripts on a rotating
+schedule just like Nagios and is compatible with Nagios plug-ins, Nagios add-ons, and . 
 
 ### push, pull, both, or neither? 
 In it’s default mode, Nagios is a pull-based system, but it can be configured
