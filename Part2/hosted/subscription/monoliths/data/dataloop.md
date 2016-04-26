@@ -32,9 +32,9 @@ The dataloop agent pushes data to their centralized collectors via https.
 Dataloop runs Nagios checks on individual hosts every 30 seconds and flushes
 the local statsd cache every second. The retention policy is as follows:
 
- 1 & 30 second resolution: 48 hours
- 1 minute resolution: 60 days
- 1 hour resolution: 10 years
+* 1 & 30 second resolution: 48 hours
+* 1 minute resolution: 60 days
+* 1 hour resolution: 10 years
 
 ### Data Storage 
 The primary metrics data store is Riak, and dataloop has spoken publicly about

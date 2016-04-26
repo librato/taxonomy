@@ -18,11 +18,9 @@ working to optimise the performance of a web application needs and otherwise
 staying out of the way. 
 
 ### push, pull, both, or neither?
-
 New relic agents push summarized updates every 60 seconds via HTTP.
 
 ### Measurement resolution 
-
 Generally, metrics are collected, stored and displayed at one-minute
 granularity, and transaction data is collected as it arrives. Data roll-ups
 occur to various summary resolutions depending on the retention schedule
