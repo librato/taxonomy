@@ -1,40 +1,76 @@
-# <Name>
+# Prometheus
 
-## The open-source systems monitoring toolkit
+## Graphite reimagined
 
 ### What is it? 
 
-Prometheus is an open-source systems monitoring and alerting solution. It is community-driven and now a standalone open source project.
+Prometheus is a metrics-savvy open source monitoring tool with a purpose-built
+TSDB, it's own agent suite, multi-dimensionality, and first-class alerting
+support. It works by centrally polling an HTTP Port on the things you want to
+monitor, which means the things you want to monitor need to be running one of
+the various Prometheus Agents (called exporters).
+
+Exporters collect and expose metrics for various entities (System metrics,
+DB's, etc..), or ingest and re-export metrics from other daemons like Statsd.
+All of this data is made available via HTTP, and the Prometheus server is then
+configured to scrape these ports every so often. 
 
 ### push, pull, both, or neither?
 
-Prometheus offers a push gateway for pushing time series and utilizes a pull model over HTTP for time series collection.
-The Prometheus Pushgateway allows you to push time series to an intermediary job which Prometheus can scrape. You can also simply use a command-line HTTP tool like curl.
+Prometheus is entirely a Pull-based system, using Prometheus-specific
+"Exporters" to collect metrics client-side and expose them via HTTP. There is
+an optional push gateway you can use to inject metrics, but does not implement
+push's to the server, rather it is a daemon that accepts metrics via HTTP POST
+and re-exposes them for Prometheus server to scrape via HTTP. 
 
 ### Measurement resolution 
 
-If Prometheus cannot get any samples for a metric in 5min, it will behave as if that metric does not exist anymore. Preventing that is actually one of the reasons to use a push gateway. The push gateway will make the metrics of your ephemeral job scrapable at any time. Attaching the time of pushing as a timestamp would defeat that purpose because 5min after the last push, your metric will look as stale to Prometheus as if it could not be scraped at all anymore. (Prometheus knows only one timestamp per sample, there is no way to distinguish a 'time of pushing' and a 'time of scraping'.)
+By default Prometheus operates on a 15 second tick. This is configurable on a
+per/host per/metric basis.
 
 ### Data Storage 
 
-Prometheus has a sophisticated local storage subsystem. For indexes, it uses LevelDB. For the bulk sample data, it has its own custom storage layer, which organizes sample data in chunks of constant size (1024 bytes payload). These chunks are then stored on disk in one file per time series.
+Prometheus has a sophisticated custom-built local storage system which relies
+on LevelDB for tag indexing.  Sample data is organized in chunks of constant
+size (1024 bytes payload). These chunks are then persisted on disk in one file
+per time series. 
+
+As mentioned in the intro above, Prometheus is one of the newer class of TSDB's
+that support multi-dimensionality. Metrics are individually identified as a
+combination of a name and a collection of key/value tags, which enables fast
+fas searching and queries via the Web-UI. 
 
 ### Analysis capabilities
 
-Prometheus works best for recording any purely numeric time series, fitting both machine-centric monitoring as well as monitoring of highly dynamic service-oriented architectures. It allows you to quickly diagnose problems during an outage. Each Prometheus server is standalone, not depending on network storage or other remote services. Its support for multi-dimensional data collection and querying is a particular strength.
+Support for multi-dimensional data tagging and querying combined with an
+expressive DSL that enables users to quickly compute aggregations, summaries,
+and percentiles make for an excellent time-series analysis system. The built-in
+expression browser can execute ad-hoc queries and visualize individual metrics,
+and Grafana or PromDash may be used to create longer-lived dashboards. 
 
 ### Notification Capabilities
 
-Alerting with Prometheus is separated into two parts. Alerting rules in Prometheus servers send alerts to an Alertmanager. The Alertmanager then manages those alerts, including silencing, inhibition, aggregation and sending out notifications via methods such as email, PagerDuty and HipChat.
+Prometheus has first-class alerting support via alerting rules that you define
+in Prometheus server. Multiple Prometheus servers can be configured to point to
+a separately running Alertmanager daemon, which handles alert processing
+(Silencing/aggregating duplicate alerts, and etc..). The usual notification
+targets are supported (email, sms, pagerduty, et.al)
 
 ### Integration capabilities
 
-There are various libraries and servers which assist with exporting existing metrics from third-party systems as Prometheus metrics.
-
-Official and independently maintained third-party exporters include metrics support for:
-
-AWS CloudWatch, Collectd, Graphite, HAProxy, InfluxDB, Statsd, JMX, MySQL server, Apache, BIND, Memcached, MongoDB, Nginx, Redis and more.
+Prometheus directly supports a litanny of language-bindings, daemons and DB's.
+Third part exporters exist for a wider range of targets like HAProxy, JMX,
+Redis and etc.. If you can't find the exporter you're looking for, Prometheus
+also has first class support for Statsd, which can ingest pretty much anything. 
 
 ### Scaling Model
 
-Prometheus basically stores all data as time series: streams of timestamped values belonging to the same metric and the same set of labeled dimensions. Besides stored time series, Prometheus may generate temporary derived time series as the result of queries.
+Prometheus' custom data store is a local-only single-point-of-failure, and its
+poll-only operation bring into question the system's overall scalability and
+resilience. The docs report single-instances with SSD's ingesting on the order
+of 500k metrics per second, and the Prometheus blog mentions
+million-metric-per-second ingestion. 
+
+Further, there are federation and sharding strategies that can be employed that
+isolate the polling burden from the processing burden. For more info see:
+http://www.robustperception.io/scaling-and-federating-prometheus/
