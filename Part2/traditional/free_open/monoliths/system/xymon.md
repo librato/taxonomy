@@ -11,7 +11,7 @@ Xymon Client, and Xymon Server. The server has native support for monitoring
 network sockets, SNMP, and polling it's own agent.
 
 ### push, pull, both, or neither?
-Xyman is pull based.
+Xymon is pull based.
 
 ### Measurement resolution 
 Default polling interval is 5 minutes
@@ -20,17 +20,17 @@ Default polling interval is 5 minutes
 Xymon stores metrics data in RRDTool locally on the server.
 
 ### Analysis capabilities
-Analysis capablities are nascent. Apart from some pre-fab reports the Web-UI is
+Analysis capabilities are nascent. Apart from some pre-fab reports the Web-UI is
 very hierarchal, you click down into individual hosts until you're given
 RRDTool graphs that depict individual services on individual hosts.
 
 ### Notification Capabilities
 Xymon provides email-based, or ad-hoc script alerting on simple thresholds on
-individual service or host problems. Acknowledgements are supported but
+individual service or host problems. Acknowledgments are supported but
 time-period squelching is not.
 
 ### Integration capabilities
-Xymon is a pretty strictly monolthic system. You may interact directly with the
+Xymon is a pretty strictly monolithic system. You may interact directly with the
 RRD's it writes but otherwise there is no built-in means of import/export.
 
 ### Scaling Model

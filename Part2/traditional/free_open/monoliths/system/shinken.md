@@ -48,7 +48,7 @@ have been a standard feature in Nagios core 4.
 ### Scaling Model 
 Shinken is architected internally to be much more modular than Nagios, and
 although some of these components can't be distributed (eg the Arbiter and
-Broker daemons), the components that classicly represent scaling challanges to
+Broker daemons), the components that classicly represent scaling challenges to
 Nagios' design can be horizontally scaled. See:
 http://shinken.readthedocs.io/en/latest/09_architecture/the-shinken-architecture.html
 for detailed scaling info.

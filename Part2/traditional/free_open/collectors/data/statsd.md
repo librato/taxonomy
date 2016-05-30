@@ -24,14 +24,14 @@ Statsd is a push based system.
 The standard tick is 10 seconds.
 
 ### Data Storage
-Statsd is in-memory cache-and-foward, there is no data-storage requirement.
+Statsd is in-memory cache-and-forward, there is no data-storage requirement.
 
 ### Analysis capabilities
 None. Statsd is intended to be pointed at the analysis tool of your choice.
 
 ### Notification Capabilities
-None. Notification typically occurs before statsd (at a monitoring system like
-Nagios) or after statsd hands off the metrics (in a processing system like
+None. Notification typically occurs before StatsD (at a monitoring system like
+Nagios) or after StatsD hands off the metrics (in a processing system like
 Riemann or Graphite/Bosun)
 
 ### Integration capabilities

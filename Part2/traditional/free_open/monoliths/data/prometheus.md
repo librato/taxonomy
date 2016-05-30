@@ -1,6 +1,6 @@
 # Prometheus
 
-## Graphite reimagined
+## Graphite re-imagined
 
 ### What is it? 
 
@@ -11,7 +11,7 @@ monitor, which means the things you want to monitor need to be running one of
 the various Prometheus Agents (called exporters).
 
 Exporters collect and expose metrics for various entities (System metrics,
-DB's, etc..), or ingest and re-export metrics from other daemons like Statsd.
+DB's, etc..), or ingest and re-export metrics from other daemons like StatsD.
 All of this data is made available via HTTP, and the Prometheus server is then
 configured to scrape these ports every so often. 
 
@@ -20,7 +20,7 @@ configured to scrape these ports every so often.
 Prometheus is entirely a Pull-based system, using Prometheus-specific
 "Exporters" to collect metrics client-side and expose them via HTTP. There is
 an optional push gateway you can use to inject metrics, but does not implement
-push's to the server, rather it is a daemon that accepts metrics via HTTP POST
+pushes to the server, rather it is a daemon that accepts metrics via HTTP POST
 and re-exposes them for Prometheus server to scrape via HTTP. 
 
 ### Measurement resolution 
@@ -38,7 +38,7 @@ per time series.
 As mentioned in the intro above, Prometheus is one of the newer class of TSDB's
 that support multi-dimensionality. Metrics are individually identified as a
 combination of a name and a collection of key/value tags, which enables fast
-fas searching and queries via the Web-UI. 
+ searching and queries via the Web-UI. 
 
 ### Analysis capabilities
 
@@ -54,14 +54,14 @@ Prometheus has first-class alerting support via alerting rules that you define
 in Prometheus server. Multiple Prometheus servers can be configured to point to
 a separately running Alertmanager daemon, which handles alert processing
 (Silencing/aggregating duplicate alerts, and etc..). The usual notification
-targets are supported (email, sms, pagerduty, et.al)
+targets are supported (email, SMS, PagerDuty, et.al)
 
 ### Integration capabilities
 
-Prometheus directly supports a litanny of language-bindings, daemons and DB's.
+Prometheus directly supports a litany of language-bindings, daemons and DB's.
 Third part exporters exist for a wider range of targets like HAProxy, JMX,
 Redis and etc.. If you can't find the exporter you're looking for, Prometheus
-also has first class support for Statsd, which can ingest pretty much anything. 
+also has first class support for StatsD, which can ingest pretty much anything. 
 
 ### Scaling Model
 

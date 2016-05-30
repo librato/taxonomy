@@ -18,7 +18,7 @@ Graphite has, as a result, become the most widely adopted metrics processing
 system today.
 
 ### push, pull, both, or neither?
-Graphite listens on a network socket with *cabon*, it's network listener daemon
+Graphite listens on a network socket with *carbon*, it's network listener daemon
 or carbon-relay it's H/A sharding counterpart. The system is entirely
 push-based, laying passively in wait for other systems to push metrics to it.
 
@@ -30,7 +30,7 @@ summarizations are user-defined and performed in the persistence layer by
 ### Data Storage 
 Graphite uses "Whisper", a simple ring-buffer metric-per-file TSDB that was
 purpose-created for Graphite. It is conceptually similar to RRDTool's RRD's,
-but implemented entirely in Python, and comes with a far more flexable
+but implemented entirely in Python, and comes with a far more flexible
 configuration design. You may, for example, set global default roll-up values
 which are overridden by regex-matched metric names. Graphite's data storage
 tier is modular, and a few other DB's (Ceres, Cassandra via Cyanite, and
@@ -38,7 +38,7 @@ KairosDB are also supported.
 
 ### Analysis capabilities
 Graphite (even without the myriad front-ends that augment it's analysis
-capablities) is an excellent choice for metrics aggregation and analysis. The
+capabilities) is an excellent choice for metrics aggregation and analysis. The
 system was designed from the ground up to mix and match data from ad-hoc
 sources into the same chart. It supports split and logarithmic axis and ships
 with a huge number of data transformation plug-ins that enable you to, for
@@ -49,7 +49,7 @@ given signals and etc..
 None (best option is probably Bosun (https://bosun.org/))
 
 ### Integration capabilities
-Graphite is so ubiquitos that even most of it's direct competetors have
+Graphite is so ubiquitous that even most of it's direct competitors have
 integration support for it. Myriad front-ends and integrations exist that take
 graphite data and embed it. Gweb's API is excellent, and obviously the system
 can injest metrics from anything. 

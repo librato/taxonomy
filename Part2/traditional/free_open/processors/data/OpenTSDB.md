@@ -4,12 +4,12 @@
 
 ### What is it? 
 OpenTSDB is the brute force answer to the "Big Data" problem of metrics
-processing. If you've ever been frustrated by the data aggregation and Rollup
+processing. If you've ever been frustrated by the data aggregation and Roll-up
 problems I spoke briefly about in Part1 (and you have an unlimited amount of
-computing resources at your disposal) You'll be happy to hear that OpenTSB does
+computing resources at your disposal) You'll be happy to hear that OpenTSDB does
 no data summarization whatsoever. It ingests millions of millisecond precision
-metrics and stores them as RAW data datapoints. You never lose precision and
-make none of the comprimises that are usually inherent to TSDB's.
+metrics and stores them as RAW data data points. You never lose precision and
+make none of the compromises that are usually inherent to TSDB's.
 
 The bad news is that achieves this by relying on Hadoop and Hbase to map-reduce
 the metrics processing and query load. Yep, you read that correctly; OpenTSDB
@@ -22,7 +22,7 @@ up later.
 ### push, pull, both, or neither?
 OpenTSDB is mostly a push-based system for metrics ingestion, though things get
 complicated quickly as you begin to distribute it across hosts and datacenters.
-The complications are all realted to data replication and not to data-polling,
+The complications are all related to data replication and not to data-polling,
 OpenTSDB is just a TSDB, it doesn't come with an agent, and does not attempt to
 measure anything.
 
@@ -30,10 +30,10 @@ measure anything.
 Millisecond precision is possible but not recommended.
 
 ### Data Storage 
-As mentioned, the primary data store is HBase by defualt athough Cassandra and
+As mentioned, the primary data store is HBase by default although Cassandra and
 BigTable are also options. The documentation claims that an individual
-measurement takes 12bytes on disk (with lzo compression enabled) making 100+
-billion data points per Terrabyte possible. Tags are stored in-line (not in
+measurement takes 12bytes on disk (with LZO compression enabled) making 100+
+billion data points per Terabyte possible. Tags are stored in-line (not in
 external indexes) so adding tags increases the primary data storage burden.
 
 ### Analysis capabilities

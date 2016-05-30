@@ -5,12 +5,12 @@
 ### What is it? 
 Check_MK began life as an easier-to-use remote execution framework for Nagios
 (read: agent), but it is usable today as a stand-alone tool. It would be a
-straightfoward agent were it not for the various complications inherent in
+straightforward agent were it not for the various complications inherent in
 integrating with a pre-existing Nagios system. These mostly include the typical
 configuration Nagios needs before it can accept check results for hosts and
 services. 
 
-To work around Nagios' configuration complexities, Check_MK imbeds a
+To work around Nagios' configuration complexities, Check_MK embeds a
 fully-fledged service discovery system and Nagios configuration generator,
 enabling you the user to scan for new hosts and add them to your pre-existing
 Nagios configuration with a few CLI commands. Check_MK then follows up by
@@ -26,7 +26,7 @@ interacting once with each remote system it monitors per polling interval
 rather than once per configured service check as Nagios+NRPE would.
 
 ### Measurement resolution 
-Check_MK inherets its polling interval from Nagios.
+Check_MK inherits its polling interval from Nagios.
 
 ### Data Storage 
 Check_MK is a pass-through system, gathering state information and providing it

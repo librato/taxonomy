@@ -1,5 +1,5 @@
 # Kibana
 
-## A front-end for Elastisearch
+## A front-end for Elasticsearch
 
 See: ELK

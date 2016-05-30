@@ -1,22 +1,22 @@
 # ELK
 
-## Elasticache, Logstash, and Kibana
+## Elasticsearch, Logstash, and Kibana
 
 ### What is it? 
 ELK is an acronym to describe a collection of three separate open-source tools:
-Elasticache, Logstash, and Kibana. All three tools are managed by Elastic, an
+Elasticsearch, Logstash, and Kibana. All three tools are managed by Elastic, an
 open-source company focused on creating data analysis tools. Elasticsearch is
-a NoSQL database that is based on the Lucene search engine and Kibana is a
-visualization Layer created to be used with Elastisearch.  Logstash is a log
+a No-SQL database that is based on the Lucene search engine and Kibana is a
+visualization Layer created to be used with Elasticsearch.  Logstash is a log
 processing tool, and arguably the only of these tools that can properly be
-called a "monitoring" tool. Despite the "log" monnikor however, it acts more
+called a "monitoring" tool. Despite the "log" moniker however, it acts more
 like passive monitoring agent, and many shops rely wholly on ELK for their
 monitoring needs. 
 
 Logstash ingests log-data from various sources, parsing, transforming, and
-normalizing the text, which is then exported into Elastisearch where it is
+normalizing the text, which is then exported into Elasticsearch where it is
 stored and indexed. Admin then interrogate the data using Kibana to, for
-example, graph the number of occurances of HTTP 404's, or parse out latency
+example, graph the number of occurrences of HTTP 404's, or parse out latency
 numbers and graph them.
 
 If it sounds less like running a monitoring system and more like running three
@@ -24,7 +24,7 @@ separate, mildly complex pieces of software, you'd be right. ELK has many uses
 besides Monitoring, including business analytics and security, and it comes
 with a non-trivial learning curve and management overhead. It's often used by
 teams with dedicated telemetry staff or those who have pre-existing
-elasticsearch expertese.
+Elasticsearch expertise.
 
 ### push, pull, both, or neither?
 Logstash is obviously the primary means of getting data into the system and it
@@ -38,8 +38,8 @@ standard resolution.
 
 ### Data Storage 
 Elasticsearch is a distributed document store. It literally stores
-datastructures which are inputed and returned as serialized json documents.
-You feed pre-parsed, formatted data from Logstash in as JSON, and elasticsearch
+data-structures which are inputed and returned as serialized JSON documents.
+You feed pre-parsed, formatted data from Logstash in as JSON, and Elasticsearch
 automatically indexes every field in each data structure. You use "Grok", a DSL
 built-in to Logstash to format your log data using configuration commands
 called "patterns".  Logstash ships with around 120 patterns by default which
@@ -60,8 +60,8 @@ unhelpful and frustrating.
 ### Notification Capabilities
 No real notification capabilities are built-in to Elk stack. By way of
 work-arounds, there is a commercial tool from elastic called "watcher" that
-will query elasticsearch.  There is also an 'email{}' output target in Logstash
-and an opensource tool called "elastialert".
+will query Elasticsearch.  There is also an 'email{}' output target in Logstash
+and an open source tool called "elastialert".
 
 ### Integration capabilities
 Integration options pretty much center around Logstash, which has many
@@ -69,5 +69,5 @@ different plugins for input and output. You can see these here:
 https://github.com/logstash-plugins
 
 ### Scaling Model
-Elastisearch is a horizontally-scalable distributed data store. It will scale
+Elasticsearch is a horizontally-scalable distributed data store. It will scale
 as far as your pocketbook allows. 

@@ -5,16 +5,16 @@
 ### What is it?  
 OMD is a repackaging of Nagios core along with several Add-ons and replacement
 UI's. The packaging includes Nagios core, a fully-preconfigured Check_MK
-installation to accomplish remote-execution of Nagios plugins on remote hosts,
+installation to accomplish remote-execution of Nagios plug-ins on remote hosts,
 Thruk (a popular replacement UI), MK-Multisite (IMO the best Nagios
 user-interface in existence), WATO (a web-based Nagios configuration tool) and
 more. If you are familiar with the Nagios add-on universe, you'll likely find
 most, if not all of your favorite Nagios add-on's already preconfigured for you
 in OMD. 
 
-It is a large install, but it's arguably preferable to wiring up the toolchain
+It is a large install, but it's arguably preferable to wiring up the tool-chain
 manually. I say arguably because OMD itself somewhat ironically presents a few
-management challenges that don't exist if you decide to just roll the toolchain
+management challenges that don't exist if you decide to just roll the tool-chain
 yourself. You are constrained to the versions of the tools in it's current
 package for example, and if you use WATO you'll have to manage the WATO
 configuration against whatever manual configuration you or other admin make,
@@ -38,7 +38,7 @@ By default you'll get the following data retention:
 4320 entries with 30 minute step = 90 days of 30-minute resolution data
 5840 entries with 360 minute step = 4 years of 6-hour resolution data
 
-PNP4Nagios will store 3 summarizations per rollup, one averaged, one min and
+PNP4Nagios will store 3 summarizations per roll-up, one averaged, one min and
 one max.
 
 ### Data Storage 
@@ -58,7 +58,7 @@ and per-service "Fuel-gauge" visualizations for Thruk and MK-Multisite.
 
 ### Notification Capabilities 
 By default Nagios supports email notifications, UI-based alert
-acknowledgements, and highly configurable escalations.  It is moderately easy
+acknowledgments, and highly configurable escalations.  It is moderately easy
 but not trivial to define alternate notification protocols, and third party
 add-ons exist to extend it to support services like [PagerDuty]() and
 [VictorOps]().
@@ -73,10 +73,10 @@ Nagios into telemetry analysis systems like
 accomplish this, but the configuration will take a first-time user several
 hours at a minimum.  In still other contexts, Nagios was not designed for
 integration at all, for example there is no API or other means to query the
-Nagios Daemon for realtime status updates on arbitrary hosts. 
+Nagios Daemon for real-time status updates on arbitrary hosts. 
 
 OMD makes up for many of these deficiencies. It includes MK-Livestatus for
-example, which provides realtime Nagios state data via a queryable network
+example, which provides real-time Nagios state data via a queryable network
 socket. It's data exportation capabilities are limited to RRDTool however.
 
 ### Scaling Model 
@@ -86,5 +86,5 @@ checks, it scales into the range of half a million service checks depending on
 the configured polling interval. 
 
 OMD uses the Check_MK agent for remote checks, which uses passive checks by
-default. It also includes a Mod-gearman installation, which advanced users can
+default. It also includes a Mod-Gearman installation, which advanced users can
 employ to build distributed and high-availability Nagios infrastructures.

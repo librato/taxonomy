@@ -1,5 +1,5 @@
 # Logstash
 
-## Log Processing extroidnaire
+## Log Processing extraordinaire
 
 See: ELK

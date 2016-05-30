@@ -33,7 +33,7 @@ X is down for two polling cycles).
 ### Analysis capabilities
 None to speak of. Monit was designed to either alert an operator to an error
 state, or to take immediate automated corrective action when an error state is
-detected.  The monit daemon runs a local HTTP server which will output system
+detected.  The Monit daemon runs a local HTTP server which will output system
 state in XML, and there are a few open source scripts out there that will
 scrape this data and summarize it, or forward it to systems like Ganglia or
 Librato (see: https://github.com/karmi/monittr).  There is also a commercial
@@ -47,7 +47,7 @@ the specification language for what events to alert on can get a little
 unwieldy in edge cases.
 
 ### Integration capabilities 
-The monit daemon runs a local HTTP server which
+The Monit daemon runs a local HTTP server which
 will output system state in XML. There are a few open source scripts out there
 that will scrape this data and forward it to systems like Ganglia or Librato.
 

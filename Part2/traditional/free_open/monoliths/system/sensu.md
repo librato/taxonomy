@@ -6,26 +6,26 @@
 Sensu is a centralized poller that that brings modern distributed-systems
 engineering tools and techniques to bear in order to overcome some of the
 limitations inherent in the centralized-poller design.  The foremost of these
-is problably scalability. Sensu introduces a pub/sub system and centralized
+is probably scalability. Sensu introduces a pub/sub system and centralized
 message queue to remove SPOF's and distribute the monitoring load across many
 systems. 
 
-Sensu-server acts as the centralized orchistration point, keeping track of the
-schedule and publishing service checks as job-feeds, to which the sensu-clients
+Sensu-server acts as the centralized orchestration point, keeping track of the
+schedule and publishing service checks as job-feeds, to which the Sensu-clients
 subscribe. Client systems push their check results on to a queue in the form of
-events, which are processed by systems configured as sensu event handlers. 
+events, which are processed by systems configured as Sensu event handlers. 
 
-The system uses json configuration syntax and IPC, interacts very well with
-Configuration management engines, and although it's nagios-plugin compatible,
+The system uses JSON configuration syntax and IPC, interacts very well with
+Configuration management engines, and although it's Nagios-plug-in compatible,
 includes a built-in means of easily installing ad-hoc check plug-ins from it's
-own extensive collection of plugins from the command line (via bundler). There
+own extensive collection of plug-ins from the command line (via bundler). There
 are a lot of moving parts, but it is a wonderful system to work with once
 you've wrapped your head around it.
 
 ### push, pull, both, or neither?
 
 Sensu is best described as a hybrid push/pull system. It's worth noting that
-the centralized queue keeps all of the cpu-intensive work distributed, so even
+the centralized queue keeps all of the CPU-intensive work distributed, so even
 when the system is polling it's polling the queue rather than individual client
 systems individually. 
 
@@ -48,21 +48,21 @@ analysis. This is, in the authors opinion, a wise, and very welcome decision.
 
 ### Notification Capabilities
 Alerts are implemented as events. They're passed to handlers process to
-process, and Sensu assume's the handler knows what to do with it. Handlers come
+process, and Sensu assumes the handler knows what to do with it. Handlers come
 in a few types, one of which is the "pipe" handler, which simply pipes the
-json-encoded event into the program you specify (there are many
+JSON-encoded event into the program you specify (there are many
 community-provided handlers you can use, you don't have to write them
 yourself). An event will fire on any check that returns a non-zero exit code.
-That Event will be handleled either by the default event handler, or the
+That Event will be handled either by the default event handler, or the
 handler(s) you specify in the check configuration. 
 
 This is, by the way exactly the same way Sensu handles performance data export;
-the check fires an eent containing performance data which is picked up by the
+the check fires an event containing performance data which is picked up by the
 handler you specify in the check configuration. 
 
 ### Integration capabilities
 Sensu is heavily invested in being a fantastic distributed data collector and
-therefore has fantastic integration features (it is certainly king amoung the
+therefore has fantastic integration features (it is certainly king among the
 centralized pollers in this regard). Apart from the wide-open event framework
 it boasts myriad web-based API's that can be used for state and service
 introspection. 
