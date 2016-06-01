@@ -1,9 +1,9 @@
 # Tools in ./traditional/commercial/monoliths/network
-## [netcrunch](netcrunch.md)
-This tool is not yet documented
-## [opennms](opennms.md)
-This tool is not yet documented
-## [solarwinds_npm](solarwinds_npm.md)
-This tool is not yet documented
+## [# NetCrunch](netcrunch.md)
+## Network Network Network
+## [# OpenNMS](opennms.md)
+## Java Nagios plus-plus
+## [# SolarWinds Network Performance Monitor](solarwinds_npm.md)
+## More than you ever wanted to know about your Layer 3
 ## [whats_up_gold](whats_up_gold.md)
 This tool is not yet documented

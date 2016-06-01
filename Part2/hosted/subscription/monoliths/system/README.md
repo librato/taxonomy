@@ -1,9 +1,9 @@
 # Tools in ./hosted/subscription/monoliths/system
-## [copperegg](copperegg.md)
-This tool is not yet documented
-## [logic_monitor](logic_monitor.md)
-This tool is not yet documented
-## [nodeping](nodeping.md)
-This tool is not yet documented
-## [pingdom](pingdom.md)
-This tool is not yet documented
+## [# CopperEgg](copperegg.md)
+## All the IaaS in one SaaS
+## [# Logic Monitor](logic_monitor.md)
+## Autodiscover all the things
+## [# NodePing](nodeping.md)
+## All your nodes are pinged by them
+## [# Pingdom](pingdom.md)
+## 

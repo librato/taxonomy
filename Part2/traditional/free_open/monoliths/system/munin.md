@@ -1,6 +1,6 @@
 # Munin
 
-## Cactai for servers
+## Cacti for servers
 
 ### What is it? 
 Munin is a metrics-centric centralized poller written in Perl. It uses an agent
@@ -33,8 +33,8 @@ mechanism is to alert via Nagios using Munin's built-in support for
 emitting Nagios-compatible passive-checks to a running NRPE daemon.
 
 ### Integration capabilities
-Munin is, for the most part a monolithic replacement for Cactai with better
-support for general-purpose computational entities (as opposed to Cactai's SNMP
+Munin is, for the most part a monolithic replacement for Cacti with better
+support for general-purpose computational entities (as opposed to Cacti's SNMP
 focus). It does have excellent built-in support for emitting Nagios passive
 check results. 
 
