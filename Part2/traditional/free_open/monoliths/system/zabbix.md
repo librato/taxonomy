@@ -5,7 +5,7 @@
 ### What is it? 
 Zabbix is a centralized poller designed with the needs of Enterprise business
 customers. It is a well documented system that configures via Web forms, and
-features first-class support services. It is comprised from the Zabbix server
+features first-class support services. It is comprised of the Zabbix server
 process, which schedules checks, reaps results and emits notifications, 0 or
 more Zabbix Proxies which distribute the check-processing load, a database
 instance, and the Web-UI. 
