@@ -6,13 +6,13 @@
 SmokePing is a Perl script designed to ping your network components and
 visualize their latency and packet-loss. It is simple in both concept and
 execution, and takes a novel approach to visualization by taking multiple
-samples (10 by default). The samples are then sorted by latency and the median
-latency is plotted as the *actual* value, while the other samples are plotted
-in grey around the median, similarly to error bars. The shade of grey is
-selected as a function of the variance from median, which gives the resulting
-charts a "smokey" appearance (hence the tool's moniker) with darker shades of
-grey close to the median value, and lighter shades as the variance increases.
-The median value itself is also colorized as a function of packet-loss.
+samples per measurement interval (10 by default). The samples are then sorted
+by latency and the median latency is plotted as the *actual* value, while the
+actual samples are plotted in grey as deviation. The shade of grey is selected
+as a function of the distance from median, and this gives the resulting charts
+a "smokey" appearance (hence the tool's moniker) with darker shades of grey
+close to the median value, and lighter shades as the deviance increases.  The
+median value itself is also colorized as a function of packet-loss.
 
 ### push, pull, both, or neither?
 A single-instance SmokePing system is wholly pull-based, however, when multiple
@@ -27,19 +27,14 @@ SmokePing was written by the author of RRDTool and uses RRDTool for storage and
 visualization.
 
 ### Analysis capabilities
-Through clever use of plot colors, SmokePing line-graphs do a very nice job of
-not only depicting the current latency of a given network hop, but also the
-sigma latency of individual nodes. Hops that have a lot of variation in their
-latency appear to "smoke", and that data coupled with the packet-loss (also
-colorized and therefore easy to grok at a glance) do an excellent job of
-drawing the admin's attention where it needs to be.
+SmokePing line-graphs do a very nice job of depicting the latency of individual
+network hops as well as the sigma latency of individual nodes.  
 
 ### Notification Capabilities
 SmokePing has excellent alert definition syntax. You can, for example, craft
 alerts that fire when the RTT is >X for Y sampling periods, or even based on
-historic average median latency over several measurement rounds. 
-
-The notifications themselves however are restricted to email targets only.
+historic average median latency over several measurement rounds.  The
+notifications themselves however are restricted to email targets only.
 
 ### Integration capabilities
 SmokePing can be extended with plug-ins that add new protocols of service
@@ -59,7 +54,5 @@ configuration for the master node itself, so the Master is an SPOF. If it dies
 all monitoring stops.
 
 Further, the RRDTool-based storage can't be distributed off a single host, so
-SmokePing scales as far as you can scale RRDTool-based storage on a single
-node.
-
-
+SmokePing is I/O bound, and scales as far as you can scale RRDTool-based
+storage on a single node.

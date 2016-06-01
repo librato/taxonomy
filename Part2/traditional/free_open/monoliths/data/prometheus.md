@@ -59,7 +59,7 @@ targets are supported (email, SMS, PagerDuty, et.al)
 ### Integration capabilities
 
 Prometheus directly supports a litany of language-bindings, daemons and DB's.
-Third part exporters exist for a wider range of targets like HAProxy, JMX,
+Third party exporters exist for a wider range of targets like HAProxy, JMX,
 Redis and etc.. If you can't find the exporter you're looking for, Prometheus
 also has first class support for StatsD, which can ingest pretty much anything. 
 
