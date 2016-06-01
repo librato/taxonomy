@@ -1,4 +1,4 @@
-# <Name>
+# CollectD
 
 ## The system statistics collection daemon
 
