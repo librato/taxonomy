@@ -19,9 +19,9 @@ configured to scrape these ports every so often.
 
 Prometheus is entirely a Pull-based system, using Prometheus-specific
 "Exporters" to collect metrics client-side and expose them via HTTP. There is
-an optional push gateway you can use to inject metrics, but does not implement
-pushes to the server, rather it is a daemon that accepts metrics via HTTP POST
-and re-exposes them for Prometheus server to scrape via HTTP. 
+an optional push gateway you can use to inject metrics, but this works by
+accepting metrics via HTTP POST and re-exposing them for Prometheus server to
+scrape via HTTP. 
 
 ### Measurement resolution 
 
