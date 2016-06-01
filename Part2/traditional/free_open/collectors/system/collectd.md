@@ -1,41 +1,49 @@
 # CollectD
 
-## The system statistics collection daemon
+## Everybody's Favorite Monitoring Agent
 
 ### What is it?
+CollectD is a Unix daemon that collects, and transfers performance data from
+your hosts. You can think of it as a stand-alone open-source agent. You install
+it on every system you want to monitor. It collects metrics from your systems
+and emits them to other monitoring systems for processing.
 
-CollectD is a Unix daemon that collects, transfers and stores performance data of computers and network equipment. The acquired data is meant to help system administrators maintain an overview over available resources to detect existing or looming bottlenecks.
+CollectD was written in C and is extremely fast and modular. Myriad plug-ins
+exist that enable it to collect metrics on just about any off-the-shelf
+software you might be running from Apache to Zookeeper. 
 
 ### push, pull, both, or neither?
-
-The CollectD agent pushes via multicast or unicast UDP (depending on the configuration). It can also poll over TCP with additional plug-ins (i.e. cURL plug-in).
+CollectD is a push-based system.
 
 ### Measurement resolution
-
-The CollectD daemon reports every 10 seconds by default, and can be configured to sample at any rate (in seconds).
+The CollectD daemon reports every 10 seconds by default.
 
 ### Data Storage
-
-The daemon provides infrastructure for filtering and delaying data, but does not store any data alone. Data acquisition and storage is handled by plug-ins which utilize shared libraries.
+None. Data acquisition and storage is handled by plug-ins.
 
 ### Analysis capabilities
-
-CollectD collects performance data of system resources, including CPU utilization, memory utilization, and network traffic. This is useful for finding current performance bottlenecks and predict future system load.
-
-There are over 90 plug-ins supported which allow you to collect additional data for services and technologies (i.e. Java, virtual memory, hardware sensors, etc).
+None. Collectd is a stand-alone agent, designed to interact with other
+monitoring systems for analysis. 
 
 ### Notification Capabilities
+Notifications can be configured by setting a severity and a time. This is
+useful for informing users about a noticeable condition such as high CPU load.
+When a notification is triggered it is dispatched the same way that the
+performance metrics are.
 
-Notifications can be configured by setting a severity and a time. This is useful for informing users about a noticeable condition such as high CPU load. When a notification is triggered it is dispatched the same way that the performance metrics are.
-
-Various plug-ins can send or receive notifications. For instance the LogFile plug-in will write notifications to the log file, while the Network plug-in and send and receive notifications.
+Various plug-ins can send or receive notifications. For instance the LogFile
+plug-in will write notifications to the log file, while the Network plug-in and
+send and receive notifications.
 
 ### Integration capabilities
+CollectD uses a modular design, and can be installed on Linux, Solaris, Mac OS
+X, AIX, FreeBSD, NetBSD, OpenBSD, and OpenWrt-powered devices. Support for
+Microsoft Windows is provided by SSC Serv, a native Windows service that
+implements CollectD's network protocol.
 
-CollectD uses a modular design, and can be installed on Linux, Solaris, Mac OS X, AIX, FreeBSD, NetBSD, OpenBSD, and OpenWrt-powered devices. Support for Microsoft Windows is provided by SSC Serv, a native Windows service that implements CollectD's network protocol.
-
-The vast library of 90+ plug-ins allows for additional integrations with tools and services, including various web servers, interpreters, databases, and applications.
+The vast library of 90+ plug-ins allows for additional integrations with tools
+and services, including various web servers, interpreters, databases, and
+applications.
 
 ### Scaling Model
-
-CollectD uses a modular design: The daemon itself only implements infrastructure for filtering and relaying data as well as auxiliary functions and requires very few resources.
+Collectd is stateless, it will scale linerally WRT your instances.
