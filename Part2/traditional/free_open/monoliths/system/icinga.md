@@ -3,9 +3,9 @@
 ## Nagios extended
 
 ### What is it? 
-Icinga is a [centralized-polling](/Part1/2.md) system which was forked from
-Nagios core in 2007. Like Nagios, it executes stand-alone monitoring scripts on
-a rotating schedule and it remains plug-in compatible with Nagios. 
+Icinga is a centralized-poller which was forked from Nagios core in 2007. Like
+Nagios, it executes stand-alone monitoring scripts on a rotating schedule and
+it remains plug-in compatible with Nagios. 
 
 Currently there are two major version branches, Icinga v1 and v2, the primary
 difference being that Icinga1 still uses Nagios configuration syntax while

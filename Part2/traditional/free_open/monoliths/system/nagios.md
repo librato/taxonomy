@@ -4,12 +4,12 @@
 
 ### What is it? 
 Nagios is one of the oldest open-source monitoring tools.  It is a
-[centralized-polling](/Part1/2.md) system that executes stand-alone monitoring
-scripts on a rotating schedule. It’s somewhat unwieldy text-based configuration
-makes it highly flexible, albeit difficult to configure, and thousands of
-third-party add-ons exist to extend its functionality and simplify its
-configuration.  Nagios is generally believed to be the most widely used open
-source monitoring tool in the world today.
+centralized-polling system that executes stand-alone monitoring scripts on a
+rotating schedule. It’s somewhat unwieldy text-based configuration makes it
+highly flexible, albeit difficult to configure, and thousands of third-party
+add-ons exist to extend its functionality and simplify its configuration.
+Nagios is generally believed to be the most widely used open source monitoring
+tool in the world today.
 
 ### push, pull, both, or neither? 
 In its default mode, Nagios is a pull-based system, but it can be configured
