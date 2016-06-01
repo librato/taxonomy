@@ -3,62 +3,41 @@
 ## The new Nagios
 
 ### What is it? 
-Naemon is a [centralized-polling](/Part1/2.md) system that was forked from
-Nagios in 2013. It executes stand-alone monitoring scripts on a rotating
-schedule just like Nagios and is compatible with Nagios plug-ins, Nagios add-ons, and . 
+Naemon is another Nagios fork, born in 2013. It executes stand-alone monitoring
+scripts on a rotating schedule just like Nagios and is compatible with Nagios
+plug-ins, add-ons, and configuration syntax.
 
 ### push, pull, both, or neither? 
-In its default mode, Nagios is a pull-based system, but it can be configured to
+In its default mode, Naemon is a pull-based system, but it can be configured to
 accept *passive check results as well, which implement push-based status
 updates via HTTPS.
 
 ### Measurement resolution
-Nagios is designed to operate on the order of Minutes. By default it launches
-active service checks every 5 minutes.
+Like Nagios, Naemon is designed to operate on the order of Minutes. By default
+it launches active service checks every 5 minutes.
 
 ### Data Storage 
-Nagios stores state change events only, logging whenever a service changes from
-one state (like 'OK') to another state (like 'warning'). These are written to a
-log file located on the local filesystem. There is nascent built-in support
-for collecting performance data, and there are third-party add-ons which emit
-this performance data to external processors like
-[Graphite](/Part2/traditional/free_open/processors/data/graphite.md/ and
-[Librato](/Part2/hosted/freemium/processors/data/librato.md).  Other
-third-party add-ons exist to replace the state log file with MySQL and Postgres
-databases.
+Naemon inherits Nagios' statefile storage, but adds a built-in Livestatus
+plugin to provide a query API to it's own in-memory state. 
 
 ### Analysis capabilities 
-The default Nagios UI supports basic real-time red/yellow/green style
-availability data with limited historical analysis capabilities. Third-party
-and commercial UI's exist that enable some performance data in the form of
-line-graphs. 
+Naemon has replaced the Nagios core CGI's with Livestatus and Thruk. Analysis
+capabilities remain about the same. See: http://www.thruk.org/ for more
+information.
 
 ### Notification Capabilities 
-By default Nagios supports email notifications, UI-based alert
-acknowledgments, and highly configurable escalation.  It is moderately easy
-but not trivial to define alternate notification protocols, and third party
-add-ons exist to extend it to support services like [PagerDuty]() and
-[VictorOps]().
+Naemon inherits notification support unchanged from Nagios. It supports email
+notifications, UI-based alert acknowledgments, and highly configurable
+escalation.  It is moderately easy but not trivial to define alternate
+notification protocols, and third party add-ons exist to extend it to support
+services like [PagerDuty]() and [VictorOps]().
 
 ### Integration capabilities 
-In some contexts, Nagios was designed with excellent hooks to support end-user
-extensions and add ons. It is easy, for example, to create new service checks,
-and re-define notification commands.  In other context Nagios is quite
-difficult to extend, for example it is not easy to export performance data from
-Nagios into telemetry analysis systems like
-[Graphite](/Part2/traditional/free_open/processors/data/graphite.md). Tools
-exist to accomplish this, but the configuration will take a first-time user
-several hours at a minimum.  In still other contexts, Nagios was not designed
-for integration at all, for example there is no API or other means to query the
-Nagios Daemon for real-time status updates on arbitrary hosts. Integrations
-that provide this functionality exist but are non-trivial to install. DIY
-solutions must be written in C in order to communicate with the Nagios internal
-event broker interface.
+Naemon ships with Livestatus built-in but is otherwise unchanged from Nagios in
+terms of integration capablities. 
 
 ### Scaling Model 
-Nagios scales well into the tens of thousands of active service checks on
-modern hardware depending on the configured polling interval. With passive
-checks, it scales into the range of half a million service checks depending on
-the configured polling interval. Beyond that, multi-daemon setups can be
-designed and maintained by knowledgeable, dedicated telemetry teams using
-third-party add-ons
+Naemon was forked by the team that implemented lightweight worker processes in
+Nagios core 4, and they have continued their parallelization work in Naemon.
+It's too soon to tell how much Naemon improves over Nagios' scaling story but
+Naemon is generally expeted to surpass Nagios in this regard. 
