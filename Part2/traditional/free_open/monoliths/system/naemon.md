@@ -2,7 +2,6 @@
 
 ## The new Nagios
 
-### What is it? 
 Naemon is another Nagios fork, born in 2013. It executes stand-alone monitoring
 scripts on a rotating schedule just like Nagios and is compatible with Nagios
 plug-ins, add-ons, and configuration syntax.

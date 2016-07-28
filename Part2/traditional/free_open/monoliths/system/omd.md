@@ -2,7 +2,6 @@
 
 ## Nagios made easy(er)
 
-### What is it?  
 OMD is a repackaging of Nagios core along with several Add-ons and replacement
 UI's. The packaging includes Nagios core, a fully-preconfigured Check_MK
 installation to accomplish remote-execution of Nagios plug-ins on remote hosts,

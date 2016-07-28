@@ -2,7 +2,6 @@
 
 ## Py-Nagios
 
-### What is it? 
 Shinken is a from-scratch rewrite of Nagios core in python. Unlike the other
 Nagios forks, Shinken is committed to config-compatibility with Nagios core,
 which means your existing Nagios configuration will work without modification

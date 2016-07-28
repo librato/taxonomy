@@ -2,7 +2,6 @@
 
 ## Hadoop all the metrics
 
-### What is it? 
 OpenTSDB is the brute force answer to the "Big Data" problem of metrics
 processing. If you've ever been frustrated by the data aggregation and Roll-up
 problems I spoke briefly about in Part1 (and you have an unlimited amount of

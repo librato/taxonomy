@@ -2,7 +2,6 @@
 
 ## Cacti for servers
 
-### What is it? 
 Munin is a metrics-centric centralized poller written in Perl. It uses an agent
 (called *munin-node*) to collect stats on every system you want to monitor.
 Those are periodically scraped by the munin server and persisted in RRD's.

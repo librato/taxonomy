@@ -2,7 +2,6 @@
 
 ## The monitoring Leatherman
 
-### What is it? 
 Riemann is an expressive and powerful stream-processing system for monitoring
 data. It ingests "events", which are protobuf encoded objects that represent
 state changes (OK, WARN etc..), or metrics (foos:4 etc..). These events are

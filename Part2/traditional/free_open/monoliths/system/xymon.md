@@ -2,7 +2,6 @@
 
 ## Bigger Big-Brother
 
-### What is it? 
 Xymon grew out of the bbgen toolkit for Big-Brother. It is a higher-performance
 clone of Big-Brother, and aside from some performance-based changes like
 centralized configuration, looks and feels very similar.  Xymon is a classic

@@ -2,7 +2,6 @@
 
 ## Everybody's Favorite Monitoring Agent
 
-### What is it?
 CollectD is a Unix daemon that collects, and transfers performance data from
 your hosts. You can think of it as a stand-alone open-source agent. You install
 it on every system you want to monitor. It collects metrics from your systems

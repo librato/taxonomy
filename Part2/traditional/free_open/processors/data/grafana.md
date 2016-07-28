@@ -2,7 +2,6 @@
 
 ## The "Uber" of metric front-ends
 
-### What is it? 
 Grafana is a savvy modular web front-end for myriad metrics-oriented monitoring
 systems including Graphite, InfluxDB, OpenTSDB and Prometheus. It ships with a
 back-end server written in GO and uses Flot in the browser to plot the data.

@@ -2,8 +2,6 @@
 
 ## Graphite re-imagined
 
-### What is it? 
-
 Prometheus is a metrics-savvy open source monitoring tool with a purpose-built
 TSDB, it's own agent suite, multi-dimensionality, and first-class alerting
 support. It works by centrally polling an HTTP Port on the things you want to

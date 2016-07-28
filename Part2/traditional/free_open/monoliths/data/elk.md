@@ -2,7 +2,6 @@
 
 ## Elasticsearch, Logstash, and Kibana
 
-### What is it? 
 ELK is an acronym to describe a collection of three separate open-source tools:
 Elasticsearch, Logstash, and Kibana. All three tools are managed by Elastic, an
 open-source company focused on creating data analysis tools. Elasticsearch is

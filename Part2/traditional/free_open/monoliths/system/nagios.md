@@ -2,7 +2,6 @@
 
 ## The venerable, ubiquitous, operations-centric, systems-monitoring monolith
 
-### What is it? 
 Nagios is one of the oldest open-source monitoring tools.  It is a
 centralized-polling system that executes stand-alone monitoring scripts on a
 rotating schedule. It’s somewhat unwieldy text-based configuration makes it

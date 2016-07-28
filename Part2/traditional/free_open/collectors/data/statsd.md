@@ -2,8 +2,6 @@
 
 ## Simple daemon for stats aggregation
 
-### What is it?
-
 StatsD is a cache-and-forward metrics summarization daemon. It listens for
 metrics on a network socket, holds/aggregates them for some amount of time (10
 seconds by default), and then emits a summary of the data (percentiles, sums,

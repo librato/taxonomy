@@ -2,7 +2,6 @@
 
 ## Think: Monitoringd
 
-### What is it? 
 Monit began as a process-monitoring system; the sort of thing you might use
 Daemontools or more recently Systemd to achieve. It's since grown into a more
 general-purpose stand-alone agent, which is capable of monitoring local

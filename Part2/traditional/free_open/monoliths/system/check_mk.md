@@ -2,7 +2,6 @@
 
 ## Making Nagios Easier 
 
-### What is it? 
 Check_MK began life as an easier-to-use remote execution framework for Nagios
 (read: agent), but it is usable today as a stand-alone tool. It would be a
 straightforward agent were it not for the various complications inherent in

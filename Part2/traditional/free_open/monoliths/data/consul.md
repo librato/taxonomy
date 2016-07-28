@@ -2,7 +2,6 @@
 
 ## Not what you probably meant by "Monitoring"
 
-### What is it? 
 Consul is *mostly* a service discovery tool; by which I mean it is a service
 you run that enables entities like web-servers to find other entities like
 back-end API endpoints and Databases without the need for hard-coded IP's.  It

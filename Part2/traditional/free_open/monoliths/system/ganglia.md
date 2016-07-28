@@ -2,7 +2,6 @@
 
 ## Large scale, high-resolution metrics collection
 
-### What is it? 
 Ganglia is a metrics-oriented monitoring system designed for HPC clusters. It
 is able to efficiently collect metrics from thousands of hosts at ~10 second
 resolutions. 

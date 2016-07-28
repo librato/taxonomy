@@ -2,7 +2,6 @@
 
 ## Nagios extended
 
-### What is it? 
 Icinga is a centralized-poller which was forked from Nagios core in 2007. Like
 Nagios, it executes stand-alone monitoring scripts on a rotating schedule and
 it remains plug-in compatible with Nagios. 

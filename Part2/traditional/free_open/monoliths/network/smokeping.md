@@ -2,7 +2,6 @@
 
 ## Ping. With Graphs.
 
-### What is it? 
 SmokePing is a Perl script designed to ping your network components and
 visualize their latency and packet-loss. It is simple in both concept and
 execution, and takes a novel approach to visualization by taking multiple

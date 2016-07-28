@@ -2,7 +2,6 @@
 
 ## Everybody's favorite OSS Metrics tool
 
-### What is it? 
 Graphite is a metrics storage and display system. It's conceptually similar to
 RRDTool, storing metrics in ring-buffer databases locally on the filesystem.
 Graphite makes some critically important design leaps by: 

@@ -2,7 +2,6 @@
 
 ## A Nagios replacement aimed at "Enterprise" businesses
 
-### What is it? 
 Zabbix is a centralized poller designed with the needs of Enterprise business
 customers. It is a well documented system that configures via Web forms, and
 features first-class support services. It is comprised of the Zabbix server

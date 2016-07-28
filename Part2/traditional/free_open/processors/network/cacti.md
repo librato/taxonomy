@@ -2,7 +2,6 @@
 
 ## Bringing joy to NetOps since 1996
 
-### What is it? 
 Cacti is one of the first metrics-centric monolithic monitoring tools. It's a
 centralized poller built inside a PHP app with old-school, static,
 web-form-based configuration. Cacti has always been a bit inflexible and

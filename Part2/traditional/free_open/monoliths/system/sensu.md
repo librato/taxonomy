@@ -2,7 +2,6 @@
 
 ## Nagios reimagined 
 
-### What is it? 
 Sensu is a centralized poller that that brings modern distributed-systems
 engineering tools and techniques to bear in order to overcome some of the
 limitations inherent in the centralized-poller design.  The foremost of these
